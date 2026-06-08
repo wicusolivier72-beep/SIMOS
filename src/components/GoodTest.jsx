@@ -73,7 +73,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto 32px auto' }}>
               This test is not to judge you, but to serve as a mirror to your soul. Be completely honest. Nobody is watching this test except you and Creator God.
             </p>
-            <button className="btn-primary" onClick={() => handleNextStep(1)}>
+            <button className="btn-primary" onClick={() => handleNextStep(1)} style={{ width: '100%', maxWidth: '300px' }}>
               Start the Test <ArrowRight size={18} />
             </button>
           </div>
@@ -95,7 +95,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
                 <p style={{ color: 'var(--text-primary)', fontWeight: 600, marginBottom: '16px' }}>
                   Be honest... Have you really never told a single lie in your entire life?
                 </p>
-                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+                <div className="mobile-stack">
                   <button className="btn-primary" onClick={() => forceAnswer('lying', true)}>
                     Actually, I have.
                   </button>
@@ -105,7 +105,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
                 </div>
               </div>
             ) : (
-              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+              <div className="mobile-stack">
                 <button className="btn-danger" style={{ minWidth: '150px' }} onClick={() => handleAnswer('lying', true)}>
                   <ThumbsUp size={18} style={{ marginRight: '6px' }} /> Yes, I have
                 </button>
@@ -133,7 +133,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
                 <p style={{ color: 'var(--text-primary)', fontWeight: 600, marginBottom: '16px' }}>
                   Remember, the value doesn't change the act of theft. Have you truly never taken anything that didn't belong to you?
                 </p>
-                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+                <div className="mobile-stack">
                   <button className="btn-primary" onClick={() => forceAnswer('stealing', true)}>
                     I guess I have.
                   </button>
@@ -143,7 +143,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
                 </div>
               </div>
             ) : (
-              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+              <div className="mobile-stack">
                 <button className="btn-danger" style={{ minWidth: '150px' }} onClick={() => handleAnswer('stealing', true)}>
                   <ThumbsUp size={18} style={{ marginRight: '6px' }} /> Yes, I have
                 </button>
@@ -166,7 +166,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
               This means using 'God' or 'Jesus' as a curse word to express disgust or anger. In a court of law, this is called blasphemy, and it carries the highest penalty.
             </p>
 
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+            <div className="mobile-stack">
               <button className="btn-danger" style={{ minWidth: '150px' }} onClick={() => handleAnswer('blasphemy', true)}>
                 <ThumbsUp size={18} style={{ marginRight: '6px' }} /> Yes, I have
               </button>
@@ -193,7 +193,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
                 <p style={{ color: 'var(--text-primary)', fontWeight: 600, marginBottom: '16px' }}>
                   Have you really never looked at another human being with passionate desire or lust?
                 </p>
-                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+                <div className="mobile-stack">
                   <button className="btn-primary" onClick={() => forceAnswer('lust', true)}>
                     I have.
                   </button>
@@ -203,7 +203,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
                 </div>
               </div>
             ) : (
-              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+              <div className="mobile-stack">
                 <button className="btn-danger" style={{ minWidth: '150px' }} onClick={() => handleAnswer('lust', true)}>
                   <ThumbsUp size={18} style={{ marginRight: '6px' }} /> Yes, I have
                 </button>
@@ -229,7 +229,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
               If God judges you by the Ten Commandments on Judgment Day, will you be innocent or guilty of breaking His laws?
             </p>
 
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+            <div className="mobile-stack">
               <button className="btn-danger" style={{ minWidth: '160px' }} onClick={() => { setInnocentGuiltyResponse('guilty'); handleNextStep(6); }}>
                 Guilty
               </button>
@@ -265,8 +265,8 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
               Based on your guilt, would you go to <span style={{ color: 'var(--crimson)', fontWeight: 700 }}>Heaven</span> or <span style={{ color: 'var(--crimson)', fontWeight: 700 }}>Hell</span>?
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
-              <div style={{ display: 'flex', gap: '16px', width: '100%', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center', width: '100%' }}>
+              <div className="mobile-stack" style={{ width: '100%' }}>
                 <button className="btn-danger" style={{ minWidth: '150px' }} onClick={() => handleNextStep(7)}>
                   Hell
                 </button>
@@ -310,7 +310,7 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
               </p>
             </div>
 
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+            <div className="mobile-stack">
               <button className="btn-primary" onClick={onCompleteTest} style={{ fontSize: '1.1rem', padding: '14px 32px' }}>
                 Go to the Courtroom <ArrowRight size={18} />
               </button>
@@ -330,10 +330,9 @@ export default function GoodTest({ onCompleteTest, setTestProgress }) {
       justifyContent: 'center',
       minHeight: '65vh'
     }}>
-      <div className="glass" style={{
+      <div className="glass card-padding" style={{
         width: '100%',
         maxWidth: '720px',
-        padding: '48px 32px',
         border: '1px solid var(--border)',
         boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
       }}>

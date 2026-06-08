@@ -220,6 +220,83 @@ a:hover {
 
 @media (max-width: 768px) {
   .section-container {
-    padding: 48px 16px;
+    padding: 40px 16px;
+  }
+}
+
+/* Responsive Layout Utilities */
+.hidden-mobile {
+  display: inline-block;
+}
+@media (max-width: 600px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+.mobile-stack {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .mobile-stack {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  .mobile-stack > button, 
+  .mobile-stack > a {
+    width: 100%;
+  }
+}
+
+.card-padding {
+  padding: 48px 32px;
+}
+@media (max-width: 600px) {
+  .card-padding {
+    padding: 24px 16px;
+  }
+}
+
+.header-container {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  margin: 20px 24px 0 24px;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .header-container {
+    margin: 10px 12px 0 12px;
+    padding: 10px 16px;
+    top: 10px;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+.nav-container {
+  display: flex;
+  gap: 8px;
+}
+@media (max-width: 768px) {
+  .nav-container {
+    gap: 4px;
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 4px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .nav-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 }

@@ -68,13 +68,7 @@ export default function Hero({ onStartTest }) {
         Most of us think we're good enough to go to Heaven. But have you ever actually measured yourself against the standard of absolute moral perfection?
       </p>
 
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '16px',
-        justifyContent: 'center',
-        marginBottom: '64px'
-      }}>
+      <div className="mobile-stack" style={{ marginBottom: '64px' }}>
         <button className="btn-primary" onClick={onStartTest} style={{ fontSize: '1.1rem', padding: '14px 36px' }}>
           Take the Good Test <ArrowRight size={18} />
         </button>
@@ -89,9 +83,9 @@ export default function Hero({ onStartTest }) {
         maxWidth: '900px',
         marginTop: '20px'
       }}>
-        <div className="glass-interactive" style={{ padding: '24px', textAlign: 'left' }}>
+        <div className="glass-interactive card-padding" style={{ textAlign: 'left' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-            <AlertTriangle size={24} color="var(--crimson)" />
+            <AlertTriangle size={24} color="var(--crimson)" style={{ flexShrink: 0 }} />
             <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.2rem', fontWeight: 600 }}>The Grim Reality</h3>
           </div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5 }}>
@@ -99,9 +93,9 @@ export default function Hero({ onStartTest }) {
           </p>
         </div>
 
-        <div className="glass-interactive" style={{ padding: '24px', textAlign: 'left' }}>
+        <div className="glass-interactive card-padding" style={{ textAlign: 'left' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-            <ShieldCheck size={24} color="var(--gold)" />
+            <ShieldCheck size={24} color="var(--gold)" style={{ flexShrink: 0 }} />
             <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.2rem', fontWeight: 600 }}>God's Standard</h3>
           </div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5 }}>
@@ -109,9 +103,9 @@ export default function Hero({ onStartTest }) {
           </p>
         </div>
 
-        <div className="glass-interactive" style={{ padding: '24px', textAlign: 'left' }}>
+        <div className="glass-interactive card-padding" style={{ textAlign: 'left' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-            <Heart size={24} color="#10b981" />
+            <Heart size={24} color="#10b981" style={{ flexShrink: 0 }} />
             <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.2rem', fontWeight: 600 }}>The Good News</h3>
           </div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5 }}>

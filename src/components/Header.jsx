@@ -11,18 +11,7 @@ export default function Header({ currentSection, testProgress, onNavigate }) {
   ];
 
   return (
-    <header className="glass" style={{
-      position: 'sticky',
-      top: '20px',
-      zIndex: 100,
-      margin: '20px 24px 0 24px',
-      padding: '16px 28px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: '16px',
-      flexWrap: 'wrap'
-    }}>
+    <header className="glass header-container">
       <div 
         onClick={() => onNavigate('hero')}
         style={{
@@ -36,7 +25,7 @@ export default function Header({ currentSection, testProgress, onNavigate }) {
         <span style={{
           fontFamily: 'var(--heading)',
           fontWeight: 800,
-          fontSize: '1.25rem',
+          fontSize: '1.2rem',
           letterSpacing: '1px',
           background: 'linear-gradient(135deg, #f3f4f6, #9ca3af)',
           WebkitBackgroundClip: 'text',
@@ -46,23 +35,24 @@ export default function Header({ currentSection, testProgress, onNavigate }) {
         </span>
       </div>
 
-      <nav style={{ display: 'flex', gap: '8px' }}>
+      <nav className="nav-container">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => onNavigate(item.id)}
             style={{
-              padding: '8px 16px',
+              padding: '8px 14px',
               background: currentSection === item.id ? 'rgba(204, 164, 59, 0.15)' : 'transparent',
               border: '1px solid',
               borderColor: currentSection === item.id ? 'var(--gold)' : 'transparent',
               borderRadius: '8px',
               color: currentSection === item.id ? 'var(--gold-hover)' : 'var(--text-secondary)',
-              fontSize: '0.9rem',
+              fontSize: '0.85rem',
               fontWeight: 600,
               fontFamily: 'var(--heading)',
               cursor: 'pointer',
-              transition: 'all 0.2s ease'
+              transition: 'all 0.2s ease',
+              whiteSpace: 'nowrap'
             }}
           >
             {item.label}
@@ -81,9 +71,9 @@ export default function Header({ currentSection, testProgress, onNavigate }) {
           fontWeight: 600
         }}>
           <Sparkles size={14} className="animate-pulse" />
-          <span>Test Progress: {testProgress}%</span>
+          <span>Progress: {testProgress}%</span>
           <div style={{
-            width: '80px',
+            width: '60px',
             height: '4px',
             background: 'rgba(255, 255, 255, 0.1)',
             borderRadius: '2px',

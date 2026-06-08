@@ -54,13 +54,13 @@ export default function Resources() {
       {/* 4 growth steps */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
         gap: '24px',
         maxWidth: '1000px',
         margin: '0 auto 64px auto'
       }}>
         {growthSteps.map((step, idx) => (
-          <div key={idx} className="glass" style={{ padding: '28px', textAlign: 'left' }}>
+          <div key={idx} className="glass card-padding" style={{ textAlign: 'left' }}>
             <div style={{
               display: 'inline-flex',
               padding: '10px',
@@ -82,10 +82,9 @@ export default function Resources() {
       </div>
 
       {/* External Resources */}
-      <div className="glass" style={{
+      <div className="glass card-padding" style={{
         maxWidth: '800px',
         margin: '0 auto',
-        padding: '36px',
         border: '1px solid var(--border)'
       }}>
         <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.5rem', marginBottom: '24px', textAlign: 'center' }}>
@@ -103,12 +102,11 @@ export default function Resources() {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-interactive"
+              className="glass-interactive card-padding"
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '20px 24px',
                 color: 'inherit',
                 textAlign: 'left',
                 textDecoration: 'none',
@@ -117,7 +115,7 @@ export default function Resources() {
               }}
             >
               <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                <div style={{ color: 'var(--gold)' }}>{item.icon}</div>
+                <div style={{ color: 'var(--gold)', flexShrink: 0 }}>{item.icon}</div>
                 <div>
                   <h4 style={{ fontWeight: 600, fontSize: '1.05rem', marginBottom: '4px', color: 'var(--text-primary)' }}>
                     {item.title}

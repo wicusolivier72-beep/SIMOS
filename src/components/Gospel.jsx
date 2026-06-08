@@ -7,21 +7,21 @@ export default function Gospel({ onNavigateToResources }) {
   const steps = {
     repentance: {
       title: "1. Repentance (Turning)",
-      icon: <Compass size={24} color="var(--gold)" />,
+      icon: <Compass size={24} color="var(--gold)" style={{ flexShrink: 0 }} />,
       subtitle: "Changing your mind and direction",
       content: "Repentance isn't just saying 'sorry.' It is a deep, heart-felt decision to turn away from sin (which God hates) and turn toward God. It means laying down your rebellion, confessing your crimes, and deciding to live in obedience to His truth.",
       quote: "Unless you repent, you will all likewise perish. — Luke 13:3"
     },
     faith: {
       title: "2. Faith (Trusting)",
-      icon: <HeartHandshake size={24} color="var(--gold)" />,
+      icon: <HeartHandshake size={24} color="var(--gold)" style={{ flexShrink: 0 }} />,
       subtitle: "Placing your complete trust in Jesus",
       content: "Saving faith is not merely intellectual belief (even the demons believe in God). It is trust. Just as a passenger puts their entire weight on a parachute when jumping from a plane, you must put your entire life and eternity into the hands of Jesus, trusting in His death and resurrection alone.",
       quote: "Believe in the Lord Jesus, and you will be saved. — Acts 16:31"
     },
     parachute: {
       title: "3. The Parachute Analogy",
-      icon: <HelpCircle size={24} color="var(--gold)" />,
+      icon: <HelpCircle size={24} color="var(--gold)" style={{ flexShrink: 0 }} />,
       subtitle: "Why are you putting on the Savior?",
       content: "If you put on a parachute to 'improve your flight,' you'll find it heavy and uncomfortable, and when other passengers laugh at you, you'll take it off. It didn't improve your flight—it made it worse. But if you put on a parachute because you know you must jump 10,000 feet out of the plane, you won't care about discomfort or mockery. You will cling to it for dear life. Don't come to Jesus to 'improve your life.' Come to Him to be saved from the jump into eternity.",
       quote: "Put on the Lord Jesus Christ... — Romans 13:14"
@@ -59,9 +59,9 @@ export default function Gospel({ onNavigateToResources }) {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '32px',
+        gap: '24px',
         maxWidth: '900px',
-        margin: '0 auto 64px auto'
+        margin: '0 auto 48px auto'
       }}>
         {/* Tab selection */}
         <div className="glass" style={{
@@ -82,7 +82,7 @@ export default function Gospel({ onNavigateToResources }) {
                 color: activeTab === key ? 'var(--gold)' : 'var(--text-secondary)',
                 fontFamily: 'var(--heading)',
                 fontWeight: 600,
-                fontSize: 'clamp(0.8rem, 1.8vw, 1.05rem)',
+                fontSize: 'clamp(0.85rem, 1.8vw, 1.05rem)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 display: 'flex',
@@ -98,8 +98,7 @@ export default function Gospel({ onNavigateToResources }) {
         </div>
 
         {/* Tab content */}
-        <div className="glass animate-slide-up" style={{
-          padding: '40px 32px',
+        <div className="glass card-padding animate-slide-up" style={{
           border: '1px solid var(--border)',
           background: 'linear-gradient(135deg, rgba(22, 24, 33, 0.4) 0%, rgba(17, 18, 26, 0.6) 100%)',
           minHeight: '260px',
@@ -135,10 +134,9 @@ export default function Gospel({ onNavigateToResources }) {
       </div>
 
       {/* Guide to prayer / commitment */}
-      <div className="glass" style={{
+      <div className="glass card-padding" style={{
         maxWidth: '900px',
         margin: '0 auto 64px auto',
-        padding: '40px 32px',
         border: '1px solid rgba(204, 164, 59, 0.15)',
         background: 'linear-gradient(135deg, rgba(204, 164, 59, 0.02) 0%, transparent 100%)'
       }}>
@@ -185,7 +183,7 @@ export default function Gospel({ onNavigateToResources }) {
         </div>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className="mobile-stack">
         <button className="btn-primary" onClick={onNavigateToResources} style={{ fontSize: '1.1rem', padding: '14px 36px' }}>
           Explore Growth Resources <ChevronRight size={18} />
         </button>

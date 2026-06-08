@@ -32,13 +32,13 @@ export default function Courtroom({ onNavigateToGospel }) {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '32px',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        gap: '24px',
         maxWidth: '1000px',
         margin: '0 auto 56px auto'
       }}>
         {/* Card 1: The Dilemma */}
-        <div className="glass" style={{ padding: '36px', position: 'relative', overflow: 'hidden' }}>
+        <div className="glass card-padding" style={{ position: 'relative', overflow: 'hidden' }}>
           <div style={{
             position: 'absolute',
             top: '0',
@@ -48,7 +48,7 @@ export default function Courtroom({ onNavigateToGospel }) {
             background: 'var(--crimson)'
           }}></div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-            <ShieldAlert size={28} color="var(--crimson)" />
+            <ShieldAlert size={28} color="var(--crimson)" style={{ flexShrink: 0 }} />
             <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.4rem', fontWeight: 700 }}>1. The Dilemma</h3>
           </div>
           <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
@@ -72,7 +72,7 @@ export default function Courtroom({ onNavigateToGospel }) {
         </div>
 
         {/* Card 2: The Ransom */}
-        <div className="glass" style={{ padding: '36px', position: 'relative', overflow: 'hidden' }}>
+        <div className="glass card-padding" style={{ position: 'relative', overflow: 'hidden' }}>
           <div style={{
             position: 'absolute',
             top: '0',
@@ -82,7 +82,7 @@ export default function Courtroom({ onNavigateToGospel }) {
             background: '#10b981'
           }}></div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-            <Heart size={28} color="#10b981" />
+            <Heart size={28} color="#10b981" style={{ flexShrink: 0 }} />
             <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.4rem', fontWeight: 700 }}>2. The Ransom</h3>
           </div>
           <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
@@ -108,17 +108,16 @@ export default function Courtroom({ onNavigateToGospel }) {
       </div>
 
       {/* Center quote */}
-      <div className="glass" style={{
+      <div className="glass card-padding" style={{
         maxWidth: '800px',
         margin: '0 auto 64px auto',
-        padding: '32px',
         textAlign: 'center',
         background: 'linear-gradient(135deg, rgba(204, 164, 59, 0.03) 0%, rgba(255, 255, 255, 0.02) 100%)',
         border: '1px solid var(--border)'
       }}>
         <BookOpen size={32} color="var(--gold)" style={{ marginBottom: '16px' }} />
         <p style={{
-          fontSize: '1.2rem',
+          fontSize: '1.15rem',
           fontStyle: 'italic',
           lineHeight: 1.6,
           color: 'var(--text-primary)',
@@ -129,7 +128,7 @@ export default function Courtroom({ onNavigateToGospel }) {
         <span style={{ fontSize: '0.9rem', color: 'var(--gold)', fontWeight: 600 }}>JOHN 3:16</span>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className="mobile-stack">
         <button className="btn-primary" onClick={onNavigateToGospel} style={{ fontSize: '1.1rem', padding: '14px 36px' }}>
           Discover the Gospel Gift <ArrowRight size={18} />
         </button>
