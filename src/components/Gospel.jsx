@@ -22,8 +22,8 @@ export default function Gospel({ onNavigateToResources }) {
     parachute: {
       title: "3. The Parachute Analogy",
       icon: <HelpCircle size={24} color="var(--gold)" />,
-      subtitle: "Why are you putting on the savior?",
-      content: "If you put on a parachute to 'improve your flight,' you will throw it off when other passengers mock you. But if you put it on because you know you have to jump 10,000 feet into eternity, you will wear it gladly. Don't come to Jesus for a 'better life.' Come to Him to be saved from the judgment to come.",
+      subtitle: "Why are you putting on the Savior?",
+      content: "If you put on a parachute to 'improve your flight,' you'll find it heavy and uncomfortable, and when other passengers laugh at you, you'll take it off. It didn't improve your flight—it made it worse. But if you put on a parachute because you know you must jump 10,000 feet out of the plane, you won't care about discomfort or mockery. You will cling to it for dear life. Don't come to Jesus to 'improve your life.' Come to Him to be saved from the jump into eternity.",
       quote: "Put on the Lord Jesus Christ... — Romans 13:14"
     }
   };

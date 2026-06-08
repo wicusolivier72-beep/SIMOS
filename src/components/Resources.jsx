@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, HelpCircle, MessageSquare, Users, ExternalLink, PlayCircle, FileText } from 'lucide-react';
+import { BookOpen, HelpCircle, MessageSquare, Users, ExternalLink, PlayCircle } from 'lucide-react';
 
 export default function Resources() {
   const growthSteps = [
@@ -37,12 +37,6 @@ export default function Resources() {
       desc: "Read the narrative account of Jesus' life, teachings, death, and resurrection online.",
       url: "https://www.biblegateway.com/passage/?search=John+1&version=ESV",
       icon: <BookOpen size={20} />
-    },
-    {
-      title: "Free Evangelism Tracts",
-      desc: "Get classic tracts like 'Are You a Good Person?' and books to help you share your faith.",
-      url: "https://livingwaters.com/store/",
-      icon: <FileText size={20} />
     }
   ];
 
