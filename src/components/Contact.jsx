@@ -20,7 +20,7 @@ export default function Contact() {
           Accept: "application/json"
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // Placeholder key, user can replace this
+          access_key: "166aba98-a814-4b7d-8934-3c36c72644c5",
           email: email,
           message: message,
           subject: "New Question from The Good Test Website"
