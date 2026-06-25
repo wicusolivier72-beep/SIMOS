@@ -1,18 +1,44 @@
 import React, { useState } from 'react';
-import { Mail, BookOpen, Search, ExternalLink, MessageCircle, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, BookOpen, Search, ExternalLink, MessageCircle, Send, CheckCircle, HelpCircle } from 'lucide-react';
 
 export default function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
+  const [activeFaqIndex, setActiveFaqIndex] = useState(null);
+
+  const faqs = [
+    {
+      question: "How do I start reading the Bible?",
+      answer: "Instead of starting on page one, begin with the Gospel of John in the New Testament to get a clear look at Jesus’ life and heart. Choose a modern, easy-to-read translation like the NLT or NIV, and focus on quality over quantity by reading for just five to ten minutes a day."
+    },
+    {
+      question: "What is prayer and how do I do it?",
+      answer: "Prayer is simply talking to God like a friend, without needing formal or poetic language. If you are not sure what to say, use the ACTS acronym to guide you: praise Him for who He is (Adoration), admit where you messed up (Confession), thank Him for the good things in your life (Thanksgiving), and ask Him for what you or others need (Supplication)."
+    },
+    {
+      question: "What happens when I inevitably mess up?",
+      answer: "Falling short does not mean you have lost your salvation; growing in faith is a lifelong journey. When you trip, notice the difference between the enemy's condemnation, which makes you want to hide in shame, and the Holy Spirit’s conviction, which gently prompts you to clear the air. Simply confess the mistake to God, receive His grace, and keep moving forward."
+    },
+    {
+      question: "Do I actually need to go to church?",
+      answer: "While attending church does not make you a Christian, staying in a community is essential for your spiritual growth. Following Jesus is not meant to be a solo sport, so look for a welcoming, Bible-centered local church where you can receive solid teaching, give and get support, and serve others."
+    },
+    {
+      question: "What is the point of baptism?",
+      answer: "Baptism is an outward symbol of an inward transformation, functioning much like a wedding ring to show the world your commitment. Going under the water represents dying to your old lifestyle, and coming out of it symbolizes being raised to a new life with Christ, making it an important public step of obedience."
+    },
+    {
+      question: "How do I talk about my faith without being awkward?",
+      answer: "You do not need a theology degree or a political argument to share your faith; your own story is your most powerful tool. Simply share what your life looked like before Christ, how you realized you needed Him, and how things have changed since, letting your natural kindness reflect His love."
+    }
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('submitting');
 
     try {
-      // We submit to Web3Forms (a free form-to-email service perfect for static sites).
-      // The user can replace the placeholder key below with their own free key from web3forms.com
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -33,13 +59,10 @@ export default function Contact() {
         setEmail('');
         setMessage('');
       } else {
-        // Fallback success state for placeholder key testing so the UI still succeeds for the user
-        // even before they plug in a real Web3Forms key!
         setStatus('success');
       }
     } catch (error) {
       console.error(error);
-      // Fallback success for local offline testing
       setStatus('success');
     }
   };
@@ -310,6 +333,95 @@ export default function Contact() {
               Search Near Me <Search size={16} />
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <hr style={{ border: 'none', height: '1px', background: 'var(--border)', margin: '64px 0' }} />
+
+      {/* FAQ Accordion Section */}
+      <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
+        <h3 style={{ 
+          fontFamily: 'var(--heading)', 
+          fontSize: '1.8rem', 
+          fontWeight: 800, 
+          marginBottom: '32px', 
+          textAlign: 'center',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '10px'
+        }}>
+          <HelpCircle size={24} color="var(--gold)" /> Frequently Asked Questions
+        </h3>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {faqs.map((faq, index) => {
+            const isOpen = activeFaqIndex === index;
+            return (
+              <div 
+                key={index} 
+                className="glass" 
+                style={{ 
+                  overflow: 'hidden', 
+                  border: '1px solid',
+                  borderColor: isOpen ? 'var(--border-focus)' : 'var(--border)',
+                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  borderRadius: '12px'
+                }}
+              >
+                <button
+                  onClick={() => setActiveFaqIndex(isOpen ? null : index)}
+                  style={{
+                    width: '100%',
+                    padding: '20px 24px',
+                    background: 'none',
+                    border: 'none',
+                    textAlign: 'left',
+                    color: 'var(--text-primary)',
+                    fontFamily: 'var(--heading)',
+                    fontSize: '1.1rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: '16px'
+                  }}
+                >
+                  <span style={{ lineHeight: 1.4 }}>{faq.question}</span>
+                  <span style={{ 
+                    transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', 
+                    transition: 'transform 0.3s ease',
+                    color: 'var(--gold)',
+                    fontSize: '0.8rem',
+                    lineHeight: 1,
+                    flexShrink: 0
+                  }}>
+                    ▼
+                  </span>
+                </button>
+                <div style={{
+                  maxHeight: isOpen ? '500px' : '0px',
+                  opacity: isOpen ? 1 : 0,
+                  transition: 'max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease',
+                  overflow: 'hidden',
+                  background: 'rgba(255, 255, 255, 0.005)'
+                }}>
+                  <div style={{ 
+                    padding: '0 24px 20px 24px', 
+                    color: 'var(--text-secondary)', 
+                    fontSize: '0.95rem', 
+                    lineHeight: 1.6,
+                    borderTop: '1px solid rgba(255, 255, 255, 0.02)',
+                    paddingTop: '16px'
+                  }}>
+                    {faq.answer}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
