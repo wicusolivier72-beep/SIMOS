@@ -111,7 +111,7 @@ export default function Contact() {
             Send Us a Message
           </h3>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '24px' }}>
-            Submit your contact email and question below. We read all questions and will email you back if we choose. Your email remains confidential.
+            Submit your contact email and question below. Your email remains confidential.
           </p>
 
           {status === 'success' ? (
@@ -126,7 +126,7 @@ export default function Contact() {
               <CheckCircle size={44} color="#10b981" style={{ margin: '0 auto 12px auto' }} />
               <h4 style={{ color: '#10b981', fontWeight: 700, marginBottom: '8px' }}>Message Sent!</h4>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5 }}>
-                Thank you. We have received your question and will reach back out to you if we choose.
+                Thank you. We have received your question.
               </p>
               <button
                 onClick={() => setStatus('idle')}
