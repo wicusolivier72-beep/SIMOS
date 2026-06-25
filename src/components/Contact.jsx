@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// Vercel build trigger comment
 import { Mail, BookOpen, Search, ExternalLink, MessageCircle, Copy, Check } from 'lucide-react';
 
 export default function Contact() {
