@@ -52,6 +52,7 @@ export default function Footer({ onNavigate }) {
           <button onClick={() => onNavigate('court')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontSize: '0.9rem' }}>The Courtroom</button>
           <button onClick={() => onNavigate('gospel')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontSize: '0.9rem' }}>Good News</button>
           <button onClick={() => onNavigate('resources')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontSize: '0.9rem' }}>Resources</button>
+          <button onClick={() => onNavigate('contact')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', fontSize: '0.9rem' }}>Connect</button>
         </div>
 
         {/* Disclaimer */}

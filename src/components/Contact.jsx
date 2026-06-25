@@ -1,0 +1,188 @@
+import React from 'react';
+import { Mail, BookOpen, Search, ExternalLink, MessageCircle } from 'lucide-react';
+
+export default function Contact() {
+  const getBibleAppLink = () => {
+    if (typeof window !== 'undefined' && window.navigator) {
+      const userAgent = window.navigator.userAgent || window.navigator.vendor || window.opera;
+      if (/android/i.test(userAgent)) {
+        return "https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android";
+      }
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "https://apps.apple.com/app/bible/id282935706";
+      }
+    }
+    return "https://www.bible.com/app";
+  };
+
+  return (
+    <section className="section-container animate-fade-in" style={{ position: 'relative' }}>
+      <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '8px',
+          padding: '6px 16px',
+          background: 'rgba(255, 255, 255, 0.03)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          borderRadius: '20px',
+          fontSize: '0.85rem',
+          fontWeight: 600,
+          color: 'var(--gold)',
+          letterSpacing: '0.5px',
+          marginBottom: '16px'
+        }}>
+          <MessageCircle size={14} />
+          GET IN TOUCH & TAKE NEXT STEPS
+        </div>
+        <h2 style={{ fontFamily: 'var(--heading)', fontSize: '2.5rem', fontWeight: 800, marginBottom: '16px' }}>
+          Connect With Us
+        </h2>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '650px', margin: '0 auto', lineHeight: 1.5 }}>
+          Have questions about the test, the courtroom analogy, or how to begin your walk with God? Reach out to us or take your next step below.
+        </p>
+      </div>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: '32px',
+        maxWidth: '1000px',
+        margin: '0 auto'
+      }}>
+        {/* Email Contact Card */}
+        <div className="glass card-padding" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          textAlign: 'left'
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-flex',
+              padding: '10px',
+              background: 'rgba(204, 164, 59, 0.05)',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              border: '1px solid rgba(204, 164, 59, 0.1)'
+            }}>
+              <Mail size={24} color="var(--gold)" />
+            </div>
+            <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>
+              Have Questions?
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '24px' }}>
+              We would love to hear from you. Whether you have feedback, questions about salvation, or need prayer, feel free to send us an email.
+            </p>
+          </div>
+          <a
+            href="mailto:thegoodtestsurvey@gmail.com"
+            className="btn-primary"
+            style={{
+              textDecoration: 'none',
+              color: '#000',
+              fontWeight: 600,
+              width: '100%',
+              textAlign: 'center',
+              display: 'inline-flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            Email Us <ExternalLink size={16} />
+          </a>
+        </div>
+
+        {/* YouVersion Bible App Card */}
+        <div className="glass card-padding" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          textAlign: 'left'
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-flex',
+              padding: '10px',
+              background: 'rgba(204, 164, 59, 0.05)',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              border: '1px solid rgba(204, 164, 59, 0.1)'
+            }}>
+              <BookOpen size={24} color="var(--gold)" />
+            </div>
+            <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>
+              Read the Bible
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '24px' }}>
+              Download the free YouVersion Bible App to start reading God's Word daily. Keep the Scriptures in your pocket, set up reading plans, and grow in your faith.
+            </p>
+          </div>
+          <a
+            href={getBibleAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            style={{
+              width: '100%',
+              textAlign: 'center',
+              display: 'inline-flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            Download Bible App <ExternalLink size={16} />
+          </a>
+        </div>
+
+        {/* Find Local Church Card */}
+        <div className="glass card-padding" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          textAlign: 'left'
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-flex',
+              padding: '10px',
+              background: 'rgba(204, 164, 59, 0.05)',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              border: '1px solid rgba(204, 164, 59, 0.1)'
+            }}>
+              <Search size={24} color="var(--gold)" />
+            </div>
+            <h3 style={{ fontFamily: 'var(--heading)', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>
+              Find a Local Church
+            </h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '24px' }}>
+              Fellowship with other believers is critical for spiritual growth. Click below to search for a Bible-believing Christian church in your area.
+            </p>
+          </div>
+          <a
+            href="https://www.google.com/search?q=Christian+church+near+me"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            style={{
+              width: '100%',
+              textAlign: 'center',
+              display: 'inline-flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            Search Near Me <Search size={16} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

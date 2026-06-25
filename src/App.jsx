@@ -5,6 +5,7 @@ import GoodTest from './components/GoodTest';
 import Courtroom from './components/Courtroom';
 import Gospel from './components/Gospel';
 import Resources from './components/Resources';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
         return <Gospel onNavigateToResources={() => handleNavigate('resources')} />;
       case 'resources':
         return <Resources />;
+      case 'contact':
+        return <Contact />;
       default:
         return <Hero onStartTest={handleStartTest} />;
     }

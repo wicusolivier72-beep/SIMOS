@@ -7,7 +7,8 @@ export default function Header({ currentSection, testProgress, onNavigate }) {
     { id: 'test', label: 'The Test' },
     { id: 'court', label: 'The Courtroom' },
     { id: 'gospel', label: 'Good News' },
-    { id: 'resources', label: 'Resources' }
+    { id: 'resources', label: 'Resources' },
+    { id: 'contact', label: 'Connect' }
   ];
 
   return (
