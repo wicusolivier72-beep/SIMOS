@@ -1,7 +1,15 @@
-import React from 'react';
-import { Mail, BookOpen, Search, ExternalLink, MessageCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, BookOpen, Search, ExternalLink, MessageCircle, Copy, Check } from 'lucide-react';
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('thegoodtestsurvey@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const getBibleAppLink = () => {
     if (typeof window !== 'undefined' && window.navigator) {
       const userAgent = window.navigator.userAgent || window.navigator.vendor || window.opera;
@@ -58,7 +66,7 @@ export default function Contact() {
           alignItems: 'flex-start',
           textAlign: 'left'
         }}>
-          <div>
+          <div style={{ width: '100%' }}>
             <div style={{
               display: 'inline-flex',
               padding: '10px',
@@ -73,26 +81,53 @@ export default function Contact() {
               Have Questions?
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '24px' }}>
-              We would love to hear from you. Whether you have feedback, questions about salvation, or need prayer, feel free to send us an email.
+              We would love to hear from you. If you have feedback or questions about salvation, feel free to send us an email.
             </p>
           </div>
-          <a
-            href="mailto:thegoodtestsurvey@gmail.com"
-            className="btn-primary"
-            style={{
-              textDecoration: 'none',
-              color: '#000',
-              fontWeight: 600,
-              width: '100%',
-              textAlign: 'center',
-              display: 'inline-flex',
-              justifyContent: 'center',
+          <div style={{ width: '100%' }}>
+            <div style={{
+              display: 'flex',
               alignItems: 'center',
-              gap: '8px'
-            }}
-          >
-            Email Us <ExternalLink size={16} />
-          </a>
+              justifyContent: 'center',
+              background: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid var(--border)',
+              borderRadius: '8px',
+              padding: '12px 14px',
+              fontSize: '0.95rem',
+              color: 'var(--text-primary)',
+              wordBreak: 'break-all',
+              fontFamily: 'var(--sans)',
+              marginBottom: '12px',
+              textAlign: 'center',
+              userSelect: 'all',
+              fontWeight: 500
+            }}>
+              thegoodtestsurvey@gmail.com
+            </div>
+            <button
+              onClick={handleCopy}
+              className="btn-primary"
+              style={{
+                width: '100%',
+                fontWeight: 600,
+                textAlign: 'center',
+                display: 'inline-flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+            >
+              {copied ? (
+                <>
+                  <Check size={16} /> Copied!
+                </>
+              ) : (
+                <>
+                  <Copy size={16} /> Copy Email Address
+                </>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* YouVersion Bible App Card */}
